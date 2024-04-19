@@ -1,0 +1,19 @@
+.title--lg {
+    font-size: 5.6rem;
+    font-weight: bold;
+    line-height: 1.05;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: normal;
+    line-height: 1.77;
+}
+
+.title--sm {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.06;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
