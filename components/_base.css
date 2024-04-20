@@ -20,11 +20,21 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: var(--dark-blue);
+    color: var(--text-color);
+}
+
 body {
-    font-family: system-ui;
+    font-family: "Montserrat", sans-serif;
     margin: 0;
 }
 
 input, textarea, button, select {
     font: inherit;
+}
+
+::selection {
+    background-color: var(--primary);
+    color: var(--black);
 }
