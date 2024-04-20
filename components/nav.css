@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 25px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding-left: 0;
+}
