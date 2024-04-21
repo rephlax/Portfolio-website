@@ -1,0 +1,11 @@
+#intro-h1 {
+    margin-bottom: 0;
+}
+#intro-h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+#intro p {
+    margin-block: 0;
+}
