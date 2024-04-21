@@ -1,18 +1,18 @@
-.container {
+.nav {
+    padding-block: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-block: 25px;
 }
 
 .nav-links {
+    padding-left: 0;
+    list-style: none;
     display: flex;
     gap: 10px;
-    list-style: none;
-    padding-left: 0;
 }
 
-@media(max-width: 48.5rem) {
+@media (max-width: 48.5rem) {
     .nav-links li:not(:last-child) {
         display: none;
     }

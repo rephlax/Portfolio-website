@@ -3,14 +3,14 @@
     outline: revert;
     box-sizing: border-box;
     display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 1.77px;
-    line-height: 1.5;
-    font-weight: bold;
-    font-size: 0.875rem;
     cursor: pointer;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: translate 180ms, opacity 180ms;
     opacity: 0.8;
-    transition: opacity 200ms, translate 200ms;
 }
 
 .btn:hover {
@@ -29,9 +29,7 @@
 .btn--raised {
     background-color: var(--primary);
     color: var(--black);
-    padding-left: 24px;
-    padding-block: 12px;
-    padding-right: 52px;
+    padding: 12px 53px 12px 24px;
     background-image: url(/assets/images/arrow-right.svg);
     background-repeat: no-repeat;
     background-position: right 20px center;
@@ -41,6 +39,7 @@
     color: var(--text-color);
     padding: 12px;
 }
+
 .btn--line::after {
     content: "";
     box-sizing: border-box;
