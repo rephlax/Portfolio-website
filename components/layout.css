@@ -1,5 +1,5 @@
     .layout-section {
-        padding-bottom: clamp(100px, 200px, 200px);
+        padding-bottom: 200px;
         scroll-margin-top: 20px;
     }
 
@@ -14,6 +14,9 @@
     }
     
     @media (max-width: 37.5rem) {
+        .layout-section {
+            padding-bottom: 100px;
+        }
         .layout-grid-half {
             grid-template-columns: 1fr;
         }
