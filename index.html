@@ -4,55 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta name="color-scheme" content="dark light">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>Hi, I'm Luke</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
     <nav>
         <div class="container">
-            <div class="nav">
-                <img src="assets/images/LF.png" alt="Luke Farrell logo" width="45" height="43" />
-                <ul class="nav-links">
-                    <li><a href="#about-me" class="btn btn--nav">About me</a></li>
-                    <li><a href="#portfolio" class="btn btn--nav">Portfolio</a></li>
-                    <li><a href="#experience" class="btn btn--nav">Experience</a></li>
-                    <li><a href="#testimonials" class="btn btn--nav">Testimonials</a></li>
-                    <li class="nav-hire-me"><a href="#hire-me" class="btn btn--raised">Hire me</a></li>
-                </ul>
-            </div>
+            <img alt="Home" src="assets/images/LF.png" width="48px" height="48px" />
+            <ul class="nav-links">
+                <li><a href="#about-me" class="btn btn--nav">About me</a></li>
+                <li><a href="#portfolio" class="btn btn--nav">Portfolio</a></li>
+                <li><a href="#experience" class="btn btn--nav">Experience</a></li>
+                <li><a href="#testimonials" class="btn btn--nav">Testimonials</a></li>
+                <li class="nav-hire-me"><a href="#hire-me" class="btn btn--raised">Hire me</a></li>
+            </ul>
         </div>
-        <button id="toggle-theme" aria-label="Toggle dark theme">
-        	<svg
-                 xmlns="http://www.w3.org/2000/svg"
-                 enable-background="new 0 0 24 24"
-                 height="24px"
-                 viewBox="0 0 24 24"
-                 width="24px"
-                 fill="var(--light-icon)"
-                 >
-                <rect fill="none" height="24" width="24" />
-                <path
-                      d="M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36c-0.98,1.37-2.58,2.26-4.4,2.26 c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"
-                      />
-            </svg>
-        </button>
+        <button id="toggle-theme" aria-label="Toggle dark theme"><svg
+            xmlns="http://www.w3.org/2000/svg"
+            enable-background="new 0 0 24 24"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+            fill="var(--light-icon)"
+        >
+            <rect fill="none" height="24" width="24" />
+            <path
+                d="M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36c-0.98,1.37-2.58,2.26-4.4,2.26 c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"
+            />
+        </svg></button>
     </nav>
-
     <main>
-        <section id="intro" class="layout-section" aria-describedby="intro-h1 intro-h2">
-            <div class="container">
-                <h1 id="intro-h1" class="title--lg">Luke Farrell</h1>
-                <h2 id="intro-h2" class="title--lg">Front end Developer</h2>
-                <p class="text--xl">Luke is a front-end developer based in the United Kingdom.</p>
-                <p class="text--xl">Luke brings your idea to life with <strong>modern</strong> technology</strong>.</p>
-            </div>
+        <section class="layout-section" id="intro" aria-describedby="intro-h1 intro-h2" >
+            <h1 id="intro-h1" class="title--lg">Luke Farrell</h1>
+            <h2 id="intro-h2" class="title--lg">Front-end Developer</h2>
+            <p class="text--xl">Luke is a front-end developer based in the United Kingdom</p>
+            <p class="text--xl">Luke brings your idea to life with <strong>modern</strong> technology</p>
             <button id="scroll-down" aria-label="Scroll down">
                 <svg xmlns="http://www.w3.org/2000/svg"
                      height="48px"
@@ -70,27 +63,15 @@
                 <div class="layout-grid-half">
                     <div>
                         <p class="text--lg">
-                            Luke Farrell, a De Montfort University graduate 
-                            with a degree in Music Technology, found his passion 
-                            for technology while working as a concierge at a 
-                            luxury hotel in Warwickshire. His use of the hotel's 
-                            systems and interactions with guests led him to 
-                            switch his focus to web development.
+                            Luke Farrell, a De Montfort University graduate with a degree in Music Technology, found his passion for technology while working as a concierge at a luxury hotel in Warwickshire. His use of the hotel's systems and interactions with guests led him to switch his focus to web development.
                         </p>
                         <p class="text--lg">
-                            Over the past year, Luke has focused on building his 
-                            front-end web development skills. He has been working 
-                            diligently on projects after his shifts as a concierge 
-                            and during his days off. Luke aspires to land his dream 
-                            job in web development.
+                            Over the past year, Luke has focused on building his front-end web development skills. He has been working diligently on projects after his shifts as a concierge and during his days off. Luke aspires to land his dream job in web development.
                         </p>
                     </div>
                     <div>
                         <p class="text--lg">
-                            Luke's dedication to design and client satisfaction, 
-                            partenered with his experience as a concierge has 
-                            cultivated a keen eye for detail, ensuring he meets 
-                            all client expectations in his work.
+                            Luke's dedication to design and client satisfaction, partenered with his experience as a concierge has cultivated a keen eye for detail, ensuring he meets all client expectations in his work.
                         </p>
                         <p class="text--lg">
                             Curious to know more? Check-out my
@@ -99,8 +80,12 @@
                         </p>
                     </div>
                 </div>
-            </div>
+            </div>        
         </section>
+        <script type="module" src="main.js"></script>
     </main>
+    <footer>
+
+    </footer>
 </body>
 </html>
