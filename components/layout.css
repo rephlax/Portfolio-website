@@ -1,3 +1,3 @@
-.layout-section {
-    padding-bottom: 200px;
-}
+    .layout-section {
+        padding-bottom: clamp(100px, 200px, 200px);
+    }
