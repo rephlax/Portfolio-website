@@ -1,0 +1,16 @@
+#toggle-theme {
+    all: inherit;
+    outline: revert;
+    box-sizing: border-box;
+    padding: 5px;
+    cursor: pointer;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    transition: translate 200ms;
+    z-index: 1;
+}
+
+#toggle-theme:active {
+    translate: 1px 1px;
+}
