@@ -29,7 +29,7 @@
 .btn--raised {
     background-color: var(--primary);
     color: var(--black);
-    padding-inline: 24px;
+    padding-left: 24px;
     padding-block: 12px;
     padding-right: 52px;
     background-image: url(/assets/images/arrow-right.svg);
