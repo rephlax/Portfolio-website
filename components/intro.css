@@ -1,3 +1,7 @@
+#intro {
+    position: relative; /* for scroll-down */
+}
+
 #intro-h1 {
     margin-bottom: 0;
 }
