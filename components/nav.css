@@ -11,3 +11,9 @@
     list-style: none;
     padding-left: 0;
 }
+
+@media(max-width: 48.5rem) {
+    .nav-links li:not(:last-child) {
+        display: none;
+    }
+}

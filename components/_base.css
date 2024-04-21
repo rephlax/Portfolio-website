@@ -25,6 +25,12 @@ html {
     color: var(--text-color);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
 body {
     font-family: "Montserrat", sans-serif;
     margin: 0;
