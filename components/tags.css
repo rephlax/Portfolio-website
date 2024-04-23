@@ -1,0 +1,15 @@
+.tags {
+    padding-left: 0;
+}
+
+.tag {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    display: inline-block;
+    border: 1px solid var(--gray);
+    padding: 12px 16px;
+    margin: 8px;
+    margin-left: 0;
+}
