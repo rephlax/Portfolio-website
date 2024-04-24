@@ -22,7 +22,7 @@
 }
 
 .netlify-captcha {
-    padding-inline: 5px;
+    padding: 10px;
 }
 
 @media (max-width: 37.5rem) {
