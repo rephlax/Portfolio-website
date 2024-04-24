@@ -21,6 +21,10 @@
     margin-bottom: 5px;
 }
 
+.netlify-captcha {
+    padding-inline: 5px;
+}
+
 @media (max-width: 37.5rem) {
     .hire-form {
         grid-template-columns: 1fr;
