@@ -217,7 +217,7 @@
                         </div>
                     </div>
                 </address>
-                <form netlify>
+                <form netlify data-netlify-recaptcha="true" data-netlify="true" method="POST" name="contact">
                     <label for="hire-name" class="sr-only">Your name</label>
                     <input id="hire-name" type="text" autocomplete="name" class="input" placeholder="Your name" />
                     <label for="hire-email" class="sr-only">Your email</label>
@@ -225,6 +225,7 @@
                     <label for="hire-message" class="sr-only">Your message</label>
                     <textarea id="hire-message" class="input" placeholder="Your message"></textarea>
                     <div class="hire-action">
+                        <div data-netlify-recaptcha="true"></div>
                     <input type="submit" value="Send" class="btn btn--raised"/>
                     </div>
                 </form>
