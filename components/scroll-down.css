@@ -1,3 +1,11 @@
+section {opacity: 0;
+transition: opacity 0.5s;
+}
+
+section.in-view {
+    opacity: 1;
+}
+
 #nav-button {
     all: unset;
     outline: revert;
@@ -7,6 +15,7 @@
     bottom: 5px;
     cursor: pointer;
     transition: transform 0.3s; /* Add transition for smooth rotation */
+    z-index: 2;
 }
 
  /* Rotated arrow when at the bottom of the page */

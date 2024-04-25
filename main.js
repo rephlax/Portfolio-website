@@ -9,45 +9,71 @@ if (prefersLight) {
 }
 
 const button = document.getElementById('nav-button');
-        const sections = document.querySelectorAll('section');
-        let currentSectionIndex = 0;
+const sections = document.querySelectorAll('section');
+let currentSectionIndex = 0;
 
-        // Function to navigate to the next section
-        function navigateToNextSection() {
-            currentSectionIndex = (currentSectionIndex + 1) % sections.length;
-            sections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
+// Function to navigate to the next section
+function navigateToNextSection() {
+    // Increment the current section index
+    currentSectionIndex = (currentSectionIndex + 1) % sections.length;
+    
+    // Check if we are at the last section
+    if (currentSectionIndex === 0) {
+        // If we've reached the last section and cycled back to the first index,
+        // scroll to the top of the page
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        button.classList.remove('rotate');
+    } else {
+        // Otherwise, scroll to the next section
+        sections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
+        
+        // Check if we are at the last section and rotate the button if so
+        if (currentSectionIndex === sections.length - 1) {
+            button.classList.add('rotate');
+        } else {
+            button.classList.remove('rotate');
+        }
+    }
+}
+
+// Attach event listener to the button
+button.addEventListener('click', navigateToNextSection);
+
+// Create an observer for each section
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            currentSectionIndex = Array.from(sections).findIndex(section => section.id === entry.target.id);
             
-            // Check if we are at the last section and rotate the button if so
+            // Rotate the button if we are at the last section
             if (currentSectionIndex === sections.length - 1) {
                 button.classList.add('rotate');
             } else {
                 button.classList.remove('rotate');
             }
         }
+    });
+}, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+});
 
-        // Attach event listener to the button
-        button.addEventListener('click', navigateToNextSection);
+// Observe each section
+sections.forEach(section => observer.observe(section));
 
-        // Check for the current section and update the currentSectionIndex
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.id;
-                    currentSectionIndex = Array.from(sections).findIndex(section => section.id === id);
-                    
-                    // Rotate the button if we are at the last section
-                    if (currentSectionIndex === sections.length - 1) {
-                        button.classList.add('rotate');
-                    } else {
-                        button.classList.remove('rotate');
-                    }
-                }
-            });
-        }, {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5,
-        });
+// Scroll to the top of the page on initial load
+document.addEventListener('DOMContentLoaded', () => {
+    // Scroll to the top of the page
+    window.scrollTo({
+        top: 0,
+        behavior: 'auto'
+    });
 
-        // Observe each section
-        sections.forEach(section => observer.observe(section));
+    // Add in-view class to the first section
+    sections[currentSectionIndex].classList.add('in-view');
+});
