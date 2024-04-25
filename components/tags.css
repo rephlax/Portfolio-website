@@ -17,6 +17,14 @@
     outline: 1px solid transparent;
 }
 
+li.tag > lord-icon{
+    vertical-align: middle; /* Center-align vertically */
+}
+
+li.tag > lord-icon {
+    margin-right: 10px;
+}
+
 .tag::before {
     box-sizing: border-box;
     content: "";
