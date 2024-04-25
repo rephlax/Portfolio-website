@@ -1,4 +1,4 @@
-#intro {
+#section1 {
     position: relative; /* for scroll-down */
 }
 
@@ -11,6 +11,6 @@
     overflow-wrap: break-word;
 }
 
-#intro p {
+#section1 p {
     margin-block: 0;
 }

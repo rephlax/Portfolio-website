@@ -1,29 +1,35 @@
-#scroll-down {
+#nav-button {
     all: unset;
     outline: revert;
     box-sizing: border-box;
-    position: absolute;
-    bottom: 25px;
-    left: calc(50vw - 48px / 2);
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
     cursor: pointer;
+    transition: transform 0.3s; /* Add transition for smooth rotation */
 }
 
-#scroll-down svg {
+ /* Rotated arrow when at the bottom of the page */
+#nav-button.rotate {
+    transform: rotate(180deg);
+}
+
+#nav-button svg {
     fill: var(--dark-icon);
-    transition: fill 300ms;
+    transition: fill 300ms, rotate 300ms;
     animation: bounce 1.6s infinite cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-#scroll-down svg:hover {
+#nav-button svg:hover {
     fill: var(--light-icon);
 }
 
 @keyframes bounce {
     0% {
-        translate: 0 0;
+        translate: 0 0px;
     }
     
     50% {
-        translate: 0 -15px;
+        translate: 0 -10px;
     }
 }

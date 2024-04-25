@@ -1,4 +1,4 @@
-.portfolio {
+.section3 {
     display: flex;
     gap: var(--gap);
     margin-bottom: 100px;
@@ -10,12 +10,12 @@
     height: clamp(175px, 20vw, 300px);
 }
 
-.portfolio:nth-child(odd) .portfolio-screenshot {
+.section3:nth-child(odd) .portfolio-screenshot {
     order: 1;
 }
 
 @media (max-width: 37.5rem) {
-    .portfolio {
+    .section3 {
         display: block;
     }
 }
