@@ -338,11 +338,11 @@
                 </address>
                 <form name="contact" method="POST" netlify>
                     <label for="hire-name" class="sr-only">Your name</label>
-                    <input id="hire-name" type="text" autocomplete="name" class="input" placeholder="Your name" />
+                    <input name="name" id="hire-name" type="text" autocomplete="name" class="input" placeholder="Your name" />
                     <label for="hire-email" class="sr-only">Your email</label>
-                    <input id="hire-email" type="email" autocomplete="email" class="input" placeholder="Your email"/>
+                    <input name="email" id="hire-email" type="email" autocomplete="email" class="input" placeholder="Your email"/>
                     <label for="hire-message" class="sr-only">Your message</label>
-                    <textarea id="hire-message" class="input" placeholder="Your message"></textarea>
+                    <textarea name="message" id="hire-message" class="input" placeholder="Your message"></textarea>
                     <div class="hire-action">
                         <div class="netlify-captcha" data-netlify-recaptcha="true"></div>
                     <input type="submit" value="Send" class="btn btn--raised"/>
