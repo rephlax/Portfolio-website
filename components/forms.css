@@ -12,6 +12,10 @@
     transition-duration: 200ms;
 }
 
+label {
+    color: var(--text-color);
+}
+
 .input:focus {
     border-color: var(--primary);
     outline: none;
