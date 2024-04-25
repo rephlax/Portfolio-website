@@ -40,13 +40,14 @@
     left: 50%; /* Center text under the tag */
     transform: translateX(-50%);
     background-color: var(--gray-dark); /* Tooltip background color */
-    color: var(--text-color); /* Tooltip text color */
+    color: white; /* Tooltip text color */
     padding: 5px; /* Padding around the text */
     border-radius: 4px; /* Rounded corners */
     white-space: nowrap;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s;
+    z-index: 20;
 }
 
 /* Show the text underneath the tag on hover */
