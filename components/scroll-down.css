@@ -1,9 +1,12 @@
-section {opacity: 0;
-transition: opacity 0.5s;
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
 }
 
 section.in-view {
     opacity: 1;
+    transform: translateY(0);
 }
 
 #nav-button {

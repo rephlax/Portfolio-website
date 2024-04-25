@@ -12,6 +12,21 @@ const button = document.getElementById('nav-button');
 const sections = document.querySelectorAll('section');
 let currentSectionIndex = 0;
 
+// Offset from the top of the screen
+const offsetTop = 25;
+
+// Function to scroll to a section with an offset from the top
+function scrollToSectionWithOffset(section) {
+    const sectionTop = section.offsetTop;
+    const scrollPosition = sectionTop - offsetTop;
+    
+    // Scroll to the section with the desired offset
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+    });
+}
+
 // Function to navigate to the next section
 function navigateToNextSection() {
     // Increment the current section index
@@ -27,8 +42,8 @@ function navigateToNextSection() {
         });
         button.classList.remove('rotate');
     } else {
-        // Otherwise, scroll to the next section
-        sections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
+        // Otherwise, scroll to the next section with the offset
+        scrollToSectionWithOffset(sections[currentSectionIndex]);
         
         // Check if we are at the last section and rotate the button if so
         if (currentSectionIndex === sections.length - 1) {
