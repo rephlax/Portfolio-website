@@ -14,6 +14,17 @@
     order: 1;
 }
 
+.portfolio-details {
+    display: none;
+    margin-top: 10px;
+}
+
+.btn--expand {
+    display: block;
+    margin-top: 10px;
+}
+
+
 @media (max-width: 37.5rem) {
     .section3 {
         display: block;

@@ -8,6 +8,15 @@ if (prefersLight) {
     document.documentElement.classList.add("light-theme");
 }
 
+function toggleDetails(id) {
+    const details = document.getElementById(id);
+    if (details.style.display === "none" || details.style.display === "") {
+        details.style.display = "block";
+    } else {
+        details.style.display = "none";
+    }
+}
+
 const button = document.getElementById('nav-button');
 const sections = document.querySelectorAll('section');
 let currentSectionIndex = 0;
