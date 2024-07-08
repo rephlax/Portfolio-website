@@ -1,5 +1,8 @@
 :root {
-    --overlay-background: rgba(30, 30, 30, 0.95); /* Darker transparent background */
+    --overlay-background: rgba(30, 30, 30, 0.8); /* Darker transparent background */
+    --details-background: #ffffff; /* Background for the details box */
+    --details-text-color: #000000; /* Text color for the details box */
+    --details-border-color: #333333; /* Border color for the details box */
 }
 
 body {
@@ -25,44 +28,53 @@ body {
 .portfolio-details {
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--primary-color);
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-background);
     z-index: 1000;
-    color: var(--text-color);
-    max-width: 90%;
-    max-height: 90%;
-    overflow-y: auto;
-    border-radius: 8px;
-    border: 1px solid var(--secondary-color);
-    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.portfolio-details.active {
-    display: block;
+.portfolio-details .overlay-content {
+    background: var(--details-background);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: var(--details-text-color);
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto; /* Scroll if content is too long */
+    border-radius: 8px;
+    border: 1px solid var(--details-border-color);
+    opacity: 1;
 }
 
 .btn--expand {
     display: block;
     margin-top: 10px;
-    color: var(--secondary-color);
+    color: var(--details-border-color);
     background: transparent;
-    border: 2px solid var(--secondary-color);
+    border: 2px solid var(--details-border-color);
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .btn--expand:hover {
-    background: var(--secondary-color);
-    color: var(--primary-color);
+    background: var(--details-border-color);
+    color: var(--details-background);
 }
 
 @media (max-width: 37.5rem) {
     .section3 {
         display: block;
     }
+}
+
+.overlay.active,
+.portfolio-details.active {
+    display: flex;
 }
