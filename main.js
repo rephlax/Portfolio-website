@@ -11,7 +11,6 @@ if (prefersLight) {
 document.addEventListener("DOMContentLoaded", function() {
     function toggleDetails(id) {
         const details = document.getElementById(id);
-        
         if (details.classList.contains('active')) {
             details.classList.remove('active');
         } else {
