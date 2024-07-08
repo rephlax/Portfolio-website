@@ -31,11 +31,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: var(--dark-blue);
+    background: var(--details-background);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1001;
-    color: var(--text-color);
+    color: var(--details-text-color);
     max-width: 90%;
     max-height: 90%;
     overflow-y: auto;
