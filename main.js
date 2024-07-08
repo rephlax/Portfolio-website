@@ -11,10 +11,17 @@ if (prefersLight) {
 document.addEventListener("DOMContentLoaded", function() {
     function toggleDetails(id) {
         const details = document.getElementById(id);
-        if (details.classList.contains('active')) {
-            details.classList.remove('active');
-        } else {
-            details.classList.add('active');
+        const activeClass = 'active';
+        const currentlyActive = details.classList.contains(activeClass);
+
+        // Hide all details
+        document.querySelectorAll('.portfolio-details').forEach(detail => {
+            detail.classList.remove(activeClass);
+        });
+
+        if (!currentlyActive) {
+            // Show the clicked details if it was not already active
+            details.classList.add(activeClass);
         }
     }
 
