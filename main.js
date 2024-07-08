@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Attach toggleDetails to the window object so it can be accessed globally
     window.toggleDetails = toggleDetails;
+
+    // Ensure all details sections are hidden on initial load
+    document.querySelectorAll('.portfolio-details').forEach(detail => {
+        detail.classList.remove('active');
+    });
 });
 
 const button = document.getElementById('nav-button');
