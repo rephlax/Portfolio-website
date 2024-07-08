@@ -1,5 +1,5 @@
 :root {
-    --overlay-background: rgba(30, 30, 30, 0.9); /* Dark transparent background */
+    --overlay-background: rgba(30, 30, 30, 0.95); /* Darker transparent background */
 }
 
 body {
@@ -40,7 +40,7 @@ body {
     overflow-y: auto; /* Scroll if content is too long */
     border-radius: 8px; /* Rounded corners */
     border: 1px solid var(--secondary-color); /* Border to match theme */
-    pointer-events: auto; /* Allow interaction */
+    opacity: 1; /* Full opacity */
 }
 
 .overlay {
@@ -52,7 +52,6 @@ body {
     height: 100%;
     background: var(--overlay-background);
     z-index: 1000; /* Lower than the portfolio-details */
-    pointer-events: none; /* Prevent interaction */
 }
 
 .overlay.active,
