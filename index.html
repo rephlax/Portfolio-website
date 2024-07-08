@@ -119,16 +119,6 @@
                     </p>
                     <a href="https://lukefarrellproject1.netlify.app/" class="btn btn--line" target="_blank">Visit</a>
                     <button class="btn btn--expand" onclick="toggleDetails('details-1')">Expand</button>
-                    <div id="details-1" class="portfolio-details">
-                        <div class="overlay-content">
-                            <ul>
-                                <li>Why?:</li>
-                                <li>What:</li>
-                                <li>Why this project was important</li>
-                            </ul>
-                            <button class="btn btn--expand" onclick="toggleDetails('details-1')">Close</button>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="portfolio">
@@ -146,20 +136,32 @@
                     </p>
                     <a href="https://bikechecker.netlify.app/" class="btn btn--line" target="_blank">Visit</a>
                     <button class="btn btn--expand" onclick="toggleDetails('details-2')">Expand</button>
-                    <div id="details-2" class="portfolio-details">
-                        <div class="overlay-content">
-                            <ul>
-                                <li>Why?:</li>
-                                <li>What:</li>
-                                <li>Why this project was important</li>
-                            </ul>
-                            <button class="btn btn--expand" onclick="toggleDetails('details-2')">Close</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Overlay and details sections -->
+    <div id="details-1" class="portfolio-details">
+        <div class="overlay-content">
+            <ul>
+                <li>Why?:</li>
+                <li>What:</li>
+                <li>Why this project was important</li>
+            </ul>
+        </div>
+    </div>
+    <div id="details-2" class="portfolio-details">
+        <div class="overlay-content">
+            <ul>
+                <li>Why?:</li>
+                <li>What:</li>
+                <li>Why this project was important</li>
+            </ul>
+        </div>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeDetails()"></div>
+        
     <section id="section4" class="layout-section" aria-labelledby="heading-experience">
         <div class="container">
             <h2 id="heading-experience" class="title--sm layout-section-title">Experience</h2>

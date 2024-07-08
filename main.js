@@ -11,6 +11,7 @@ if (prefersLight) {
 document.addEventListener("DOMContentLoaded", function() {
     function toggleDetails(id) {
         const details = document.getElementById(id);
+        const overlay = document.getElementById('overlay');
         const activeClass = 'active';
         const currentlyActive = details.classList.contains(activeClass);
 
@@ -19,19 +20,26 @@ document.addEventListener("DOMContentLoaded", function() {
             detail.classList.remove(activeClass);
         });
 
+        // Hide overlay
+        overlay.classList.remove(activeClass);
+
         if (!currentlyActive) {
             // Show the clicked details if it was not already active
             details.classList.add(activeClass);
+            overlay.classList.add(activeClass);
         }
     }
 
     // Attach toggleDetails to the window object so it can be accessed globally
     window.toggleDetails = toggleDetails;
 
-    // Ensure all details sections are hidden on initial load
-    document.querySelectorAll('.portfolio-details').forEach(detail => {
-        detail.classList.remove('active');
-    });
+    // Function to close details
+    window.closeDetails = function() {
+        document.querySelectorAll('.portfolio-details').forEach(detail => {
+            detail.classList.remove('active');
+        });
+        document.getElementById('overlay').classList.remove('active');
+    };
 });
 
 const button = document.getElementById('nav-button');
