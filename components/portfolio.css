@@ -25,6 +25,12 @@ body {
     order: 1;
 }
 
+.ul-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .portfolio-details {
     display: none;
     position: fixed;
@@ -79,5 +85,12 @@ body {
 @media (max-width: 37.5rem) {
     .section3 {
         display: block;
+    }
+    ul{
+        padding-inline-start: 0px;
+    }
+    .portfolio-details{
+        padding: 0px;
+        padding-inline: 5px;
     }
 }
