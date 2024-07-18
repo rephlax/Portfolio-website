@@ -55,3 +55,9 @@
     visibility: visible;
     opacity: 1;
 }
+
+@media (max-width: 37.5rems){
+    tags{
+        justify-content: center;
+    }
+}
