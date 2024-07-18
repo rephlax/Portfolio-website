@@ -49,3 +49,9 @@
     font-weight: normal;
     line-height: 1.77;
 }
+
+@media (max-width: 37.5rem){
+    .title--lg{
+        font-size: 5rem;
+    }
+}

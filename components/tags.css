@@ -56,8 +56,15 @@
     opacity: 1;
 }
 
-@media (max-width: 37.5rems){
-    tags{
+@media (max-width: 37.5rem){
+    .tags{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .tag{
+        display: flex;
         justify-content: center;
     }
 }
