@@ -40,6 +40,23 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         document.getElementById('overlay').classList.remove('active');
     };
+
+    // Function to handle fade-in effect
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    });
+
+    fadeInElements.forEach(element => observer.observe(element));
 });
 
 const button = document.getElementById('nav-button');
@@ -92,7 +109,7 @@ function navigateToNextSection() {
 button.addEventListener('click', navigateToNextSection);
 
 // Create an observer for each section
-const observer = new IntersectionObserver(entries => {
+const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('in-view');
@@ -113,7 +130,7 @@ const observer = new IntersectionObserver(entries => {
 });
 
 // Observe each section
-sections.forEach(section => observer.observe(section));
+sections.forEach(section => sectionObserver.observe(section));
 
 // Scroll to the top of the page on initial load
 document.addEventListener('DOMContentLoaded', () => {
