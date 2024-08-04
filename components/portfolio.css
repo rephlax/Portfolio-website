@@ -90,7 +90,9 @@ body {
         padding-inline-start: 0px;
     }
     .portfolio-details{
-        padding: 0px;
-        padding-inline: 5px;
+        max-width: calc(100% - 40px);
+        width: calc(100% - 40px);
+        padding: 15px;
+        margin: auto;
     }
 }
