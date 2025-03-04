@@ -78,38 +78,3 @@
 	height: 24px;
 	animation: bounce 2s infinite cubic-bezier(0.65, 0, 0.35, 1);
 }
-
-#toggle-theme {
-	all: unset;
-	outline: revert;
-	box-sizing: border-box;
-	cursor: pointer;
-	position: fixed;
-	top: 16px;
-	right: 16px;
-	z-index: 3;
-	background: var(--primary);
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-#toggle-theme:hover {
-	background: var(--primary-light);
-	transform: translateY(-3px);
-}
-
-#toggle-theme:active {
-	transform: translateY(0);
-}
-
-#toggle-theme svg {
-	fill: white;
-	width: 24px;
-	height: 24px;
-}

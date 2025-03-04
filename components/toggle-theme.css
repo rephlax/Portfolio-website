@@ -1,15 +1,34 @@
 #toggle-theme {
-    all: inherit;
-    outline: revert;
-    box-sizing: border-box;
-    cursor: pointer;
-    position: fixed;
-    top: 5px;
-    right: 5px;
-    z-index: 1;
-    padding: 5px;
-    transition: translate 180ms;
+	all: unset;
+	outline: revert;
+	box-sizing: border-box;
+	cursor: pointer;
+	position: fixed;
+	bottom: 16px;
+	left: 16px;
+	z-index: 99;
+	background: var(--primary);
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
+#toggle-theme:hover {
+	background: var(--primary-light);
+	transform: translateY(-3px);
+}
+
 #toggle-theme:active {
-    translate: 1px 1px;
+	transform: translateY(-1px);
+}
+
+#toggle-theme svg {
+	fill: white;
+	width: 20px;
+	height: 20px;
 }
