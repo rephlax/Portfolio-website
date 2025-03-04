@@ -1,70 +1,147 @@
-/* Existing styles for tags and tag */
 .tags {
-    padding-left: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	gap: 20px;
+	padding-left: 0;
+	margin: 30px 0 80px 0;
 }
 
 .tag {
-    --tag-color: var(--gray);
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1.6;
-    letter-spacing: 1px;
-    display: inline-block;
-    border: 1px solid var(--tag-color);
-    padding: 12px 16px;
-    margin: 8px;
-    margin-left: 0;
-    position: relative;
-    outline: 1px solid transparent;
-}
-
-
-.tag::before {
-    box-sizing: border-box;
-    content: "";
-    position: absolute;
-    inset: -3px;
-    border: 1px solid var(--tag-color);
+	--tag-color: var(--gray-light);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.03);
+	backdrop-filter: blur(5px);
+	border-radius: 8px;
+	padding: 15px 8px;
+	margin-bottom: 35px;
+	position: relative;
+	transition: all 0.3s ease;
+	border: 2px solid var(--primary);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	height: auto;
+	min-height: 90px;
+	cursor: default;
 }
 
 .tag:hover {
-    --tag-color: var(--primary);
-    color: var(--primary);
-    outline-color: var(--primary);
+	transform: translateY(-5px);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+	background: rgba(var(--primary-rgb), 0.1);
+	border-color: var(--primary-light);
+	--tag-color: var(--primary);
 }
 
-/* Style for the text (tooltip) */
+.tag svg {
+	fill: var(--tag-color);
+	width: 30px;
+	height: 30px;
+	margin-bottom: 8px;
+	transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.tag:hover svg {
+	fill: var(--primary);
+	transform: scale(1.1);
+}
+
+.tag-label {
+	font-size: 0.8rem;
+	font-weight: 500;
+	text-align: center;
+	color: var(--text-color);
+	margin-top: 5px;
+	transition: color 0.3s ease;
+}
+
+.tag:hover .tag-label {
+	color: var(--primary);
+}
+
 .tag .tag-text {
-    position: absolute;
-    bottom: -40px; /* Adjust as needed */
-    left: 50%; /* Center text under the tag */
-    transform: translateX(-50%);
-    background-color: var(--gray-dark); /* Tooltip background color */
-    color: white; /* Tooltip text color */
-    padding: 5px; /* Padding around the text */
-    border-radius: 4px; /* Rounded corners */
-    white-space: nowrap;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: 20;
+	position: absolute;
+	bottom: -35px;
+	left: 50%;
+	transform: translateX(-50%) translateY(10px);
+	background-color: var(--primary-dark);
+	color: white;
+	padding: 5px 10px;
+	border-radius: 4px;
+	white-space: nowrap;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s, transform 0.3s;
+	z-index: 20;
+	font-size: 0.75rem;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	pointer-events: none;
+	text-align: center;
+	max-width: 120px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-/* Show the text underneath the tag on hover */
 .tag:hover .tag-text {
-    visibility: visible;
-    opacity: 1;
+	visibility: visible;
+	opacity: 1;
+	transform: translateX(-50%) translateY(0);
 }
 
-@media (max-width: 37.5rem){
-    .tags{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-    }
+.tag .tag-text::before {
+	content: "";
+	position: absolute;
+	top: -4px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-width: 0 4px 4px 4px;
+	border-style: solid;
+	border-color: transparent transparent var(--primary-dark) transparent;
+}
 
-    .tag{
-        display: flex;
-        justify-content: center;
-    }
+#section4 .tags {
+	row-gap: 50px;
+	margin-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+	.tags {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 15px;
+		row-gap: 50px;
+	}
+
+	.tag {
+		margin-bottom: 30px;
+		padding: 12px 5px;
+	}
+
+	.tag .tag-text {
+		bottom: -30px;
+		font-size: 0.7rem;
+		padding: 4px 8px;
+	}
+}
+
+@media (max-width: 480px) {
+	.tags {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+		row-gap: 45px;
+	}
+
+	.tag {
+		padding: 10px 5px;
+		margin-bottom: 25px;
+	}
+
+	.tag svg {
+		width: 25px;
+		height: 25px;
+	}
+
+	.tag-label {
+		font-size: 0.75rem;
+	}
 }

@@ -1,58 +1,115 @@
-#nav-button {
-    all: unset;
-    outline: revert;
-    box-sizing: border-box;
-    position: fixed;
-    right: 5px;
-    bottom: 5px;
-    cursor: pointer;
-    transition: transform 0.3s; /* Add transition for smooth rotation */
-    z-index: 2;
-}
-
- /* Rotated arrow when at the bottom of the page */
-#nav-button.rotate {
-    transform: rotate(180deg);
-}
-
-#nav-button svg {
-    fill: var(--dark-icon);
-    transition: fill 300ms, rotate 300ms;
-    animation: bounce 1.6s infinite cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-#nav-button svg:hover {
-    fill: var(--light-icon);
-}
-
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* Start with a slight vertical offset */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0); /* End at the original position */
-    }
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    will-change: opacity, transform;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	will-change: opacity, transform;
 }
 
 .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0); /* Make sure it ends at the original position */
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.layout-section:nth-child(1) .fade-in {
+	transition-delay: 0.1s;
+}
+.layout-section:nth-child(1) .fade-in:nth-child(2) {
+	transition-delay: 0.2s;
+}
+.layout-section:nth-child(1) .fade-in:nth-child(3) {
+	transition-delay: 0.3s;
+}
+.layout-section:nth-child(1) .fade-in:nth-child(4) {
+	transition-delay: 0.4s;
 }
 
 @keyframes bounce {
-    0% {
-        translate: 0 0px;
-    }
-    
-    50% {
-        translate: 0 -10px;
-    }
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-6px);
+	}
+}
+
+#nav-button {
+	all: unset;
+	outline: revert;
+	box-sizing: border-box;
+	position: fixed;
+	right: 16px;
+	bottom: 16px;
+	cursor: pointer;
+	z-index: 2;
+	background: var(--primary);
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#nav-button.rotate {
+	transform: rotate(180deg);
+}
+
+#nav-button:hover {
+	background: var(--primary-light);
+}
+
+#nav-button svg {
+	fill: white;
+	width: 24px;
+	height: 24px;
+	animation: bounce 2s infinite cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#toggle-theme {
+	all: unset;
+	outline: revert;
+	box-sizing: border-box;
+	cursor: pointer;
+	position: fixed;
+	top: 16px;
+	right: 16px;
+	z-index: 3;
+	background: var(--primary);
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#toggle-theme:hover {
+	background: var(--primary-light);
+	transform: translateY(-3px);
+}
+
+#toggle-theme:active {
+	transform: translateY(0);
+}
+
+#toggle-theme svg {
+	fill: white;
+	width: 24px;
+	height: 24px;
 }

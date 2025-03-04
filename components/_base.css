@@ -1,63 +1,73 @@
+/* _base.css update with pink colors */
 :root {
-    --primary: #fb2576;
-    --dark-blue: #19030b;
-    --black: #232020;
-    --gray: #999999;
-    --beige: #f5f5f1;
-    --gap: 80px;
+	/* Original pink color palette with enhancements */
+	--primary: #fb2576; /* Original vibrant pink */
+	--primary-light: #ff5a9a; /* Lighter pink for hover states */
+	--primary-dark: #d01a60; /* Darker pink for active states */
+	--primary-rgb: 251, 37, 118; /* RGB values for transparency effects */
+	--dark-blue: #19030b; /* Original dark background */
+	--black: #232020; /* Original black for text */
+	--gray: #999999; /* Original medium gray */
+	--gray-light: #bdbdbd; /* Light gray for secondary text */
+	--gray-dark: #666666; /* Original dark gray */
+	--beige: #f5f5f1; /* Original off-white for light theme */
+	--gap: 80px; /* Spacing variable */
 
-    /* theme dependent variables */
-    --text-color: white;
-    --light-icon: white;
-    --gray-dark: #666666;
-    --gray-light: #bdbdbd;
-    --dark-icon: var(--black);
-    --anchor-color: var(--primary);
-}
-
-* {
-    box-sizing: border-box;
+	/* theme dependent variables */
+	--text-color: white;
+	--light-icon: white;
+	--dark-icon: var(--black);
+	--anchor-color: var(--primary);
+	--background-gradient: linear-gradient(
+		135deg,
+		var(--dark-blue) 0%,
+		#380a24 100%
+	);
 }
 
 html {
-    background-color: var(--dark-blue);
-    color: var(--text-color);
+	background: var(--background-gradient);
+	color: var(--text-color);
 }
 
 html.light-theme {
-    background-color: var(--beige);
-    --text-color: var(--black);
-    --gray-light: var(--gray-dark);
-    --light-icon: var(--black);
-    --dark-icon: white;
-    --anchor-color: var(--black);
+	background: var(--beige);
+	--text-color: var(--black);
+	--gray-light: var(--gray-dark);
+	--light-icon: var(--black);
+	--dark-icon: white;
+	--anchor-color: var(--primary);
+	--background-gradient: linear-gradient(135deg, var(--beige) 0%, #fffdf9 100%);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
+	html {
+		scroll-behavior: smooth;
+	}
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
+	font-family: "Poppins", sans-serif;
+	margin: 0;
 }
 
-input, textarea, button, select {
-    font: inherit;
+input,
+textarea,
+button,
+select {
+	font: inherit;
 }
 
 ::selection {
-    background-color: var(--primary);
-    color: var(--black);
+	background-color: var(--primary);
+	color: var(--black);
 }
 
 @media (max-width: 37.5rem) {
-    :root {
-        --gap: 30px;
-    }
-    html {
-        font-size: 70%; /* as long as the smallest font is still legible */
-    }
+	:root {
+		--gap: 30px;
+	}
+	html {
+		font-size: 70%; /* as long as the smallest font is still legible */
+	}
 }

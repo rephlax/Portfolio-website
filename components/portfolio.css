@@ -1,39 +1,66 @@
 :root {
-	--overlay-background: rgba(
-		30,
-		30,
-		30,
-		0.8
-	); /* Darker transparent background */
-	--details-background: #ffffff; /* Background for the details box */
-	--details-text-color: #000000; /* Text color for the details box */
-	--details-border-color: #333333; /* Border color for the details box */
-}
-
-body {
-	font-family: "Poppins", sans-serif;
+	--card-border-radius: 8px;
+	--card-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	--overlay-background: rgba(26, 32, 44, 0.85);
+	--details-background: #ffffff;
+	--details-text-color: var(--black);
+	--details-border-color: var(--gray-light);
 }
 
 .portfolio {
-	display: flex;
-	gap: var(--gap);
-	margin-bottom: 100px;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 40px;
+	margin-bottom: 60px;
+}
+
+.portfolio-item {
+	background: rgba(255, 255, 255, 0.03);
+	border-radius: var(--card-border-radius);
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	position: relative;
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	box-shadow: var(--card-shadow);
+}
+
+.portfolio-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-content {
+	padding: 24px;
 }
 
 .portfolio-screenshot {
-	border-radius: 50%;
-	width: clamp(175px, 20vw, 300px);
-	height: clamp(175px, 20vw, 300px);
+	border-radius: 0;
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	object-position: center;
+	transition: transform 0.5s ease;
 }
 
-.portfolio:nth-child(odd) .portfolio-screenshot {
-	order: 1;
+.portfolio-item:hover .portfolio-screenshot {
+	transform: scale(1.05);
 }
 
-.ul-details {
+.portfolio-item .title {
+	font-size: 1.563rem;
+	margin-top: 16px;
+	margin-bottom: 8px;
+}
+
+.portfolio-item .text {
+	margin-bottom: 20px;
+}
+
+.portfolio-actions {
 	display: flex;
-	flex-direction: column;
-	gap: 10px;
+	gap: 16px;
+	margin-top: 20px;
 }
 
 .portfolio-details {
@@ -43,20 +70,37 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background: var(--details-background);
-	padding: 20px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	padding: 32px;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 	z-index: 1001;
 	color: var(--details-text-color);
-	max-width: 90%;
-	max-height: 90%;
+	max-width: 650px;
+	max-height: 85vh;
 	overflow-y: auto;
-	border-radius: 8px;
-	border: 1px solid var(--primary);
+	border-radius: var(--card-border-radius);
+	border: none;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.portfolio-details.active {
+	display: block;
 	opacity: 1;
 }
 
-#section2 li {
-	list-style: none;
+.portfolio-details h3 {
+	margin-top: 0;
+	border-bottom: 1px solid var(--details-border-color);
+	padding-bottom: 16px;
+	margin-bottom: 24px;
+}
+
+.ul-details {
+	padding-left: 0;
+}
+
+.ul-details li {
+	margin-bottom: 20px;
 }
 
 .overlay {
@@ -68,40 +112,71 @@ body {
 	height: 100%;
 	background: var(--overlay-background);
 	z-index: 1000;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	backdrop-filter: blur(5px);
 }
 
-.overlay.active,
-.portfolio-details.active {
+.overlay.active {
 	display: block;
+	opacity: 1;
+}
+
+.close-details {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	background: transparent;
+	border: none;
+	color: var(--gray);
+	font-size: 24px;
+	cursor: pointer;
+	transition: color 0.2s ease;
+}
+
+.close-details:hover {
+	color: var(--primary);
 }
 
 .btn--expand {
-	display: block;
-	margin-top: 10px;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
 	color: var(--text-color);
 	background: transparent;
-	border: 2px solid var(--text-color);
-	padding: 5px 10px;
+	border: 1px solid currentColor;
+	padding: 8px 16px;
 	border-radius: 4px;
 	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.btn--expand::after {
+	content: "+";
+	font-size: 16px;
 }
 
 .btn--expand:hover {
-	background: var(--details-border-color);
-	color: var(--details-background);
+	background: var(--primary);
+	border-color: var(--primary);
+	color: white;
+}
+
+@media (min-width: 768px) {
+	.portfolio {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1200px) {
+	.portfolio {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 @media (max-width: 37.5rem) {
-	.section3 {
-		display: block;
-	}
-	ul {
-		padding-inline-start: 0px;
-	}
 	.portfolio-details {
-		max-width: calc(100% - 40px);
-		width: calc(100% - 40px);
-		padding: 15px;
-		margin: auto;
+		max-width: calc(100% - 32px);
+		padding: 20px;
 	}
 }
