@@ -9,6 +9,13 @@ if (prefersLight) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+	const overlay = document.getElementById("overlay");
+	if (overlay) {
+		overlay.addEventListener("click", function () {
+			closeDetails();
+		});
+	}
+
 	// Full Story Toggle
 	const fullStoryBtn = document.getElementById("fullStoryBtn");
 	if (fullStoryBtn) {
@@ -19,9 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
 				fullStory.style.display = "block";
 				fullStoryBtn.textContent = "Show Less";
 
+				fullStory.style.color = "var(--black)";
+
 				const paragraphs = fullStory.querySelectorAll(".fade-in");
 				paragraphs.forEach((p) => {
 					p.classList.add("visible");
+					p.style.color = "var(--black)";
 				});
 			} else {
 				fullStory.style.display = "none";
