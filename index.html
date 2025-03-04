@@ -114,6 +114,26 @@
         <div class="container">
             <h2 id="heading-portfolio" class="title--sm layout-section-title fade-in">Portfolio</h2>
             <div class="portfolio">
+                <!-- Pawkeeper Card -->
+                <div class="portfolio-item fade-in">
+                    <img
+                        src="assets/images/pawkeeper.png"
+                        width="300"
+                        height="300"
+                        alt="Pawkeeper Project"
+                        class="portfolio-screenshot fade-in"
+                    />
+                    <div class="portfolio-content">
+                        <h3 class="title fade-in">Pawkeeper</h3>
+                        <p class="text fade-in">
+                            MERN stack pet-sitting application with interactive map and chat system
+                        </p>
+                        <div class="portfolio-actions">
+                            <a href="https://pawkeeper.netlify.app/" class="btn btn--line fade-in" target="_blank">Visit</a>
+                            <button class="btn btn--expand fade-in" onclick="toggleDetails('details-5')">Expand</button>
+                        </div>
+                    </div>
+                </div>
                 <!-- Exhibitly Card -->
                 <div class="portfolio-item fade-in">
                     <img
@@ -200,7 +220,31 @@
             </div>
         </div>
     </section>
-    
+    <div id="details-5" class="portfolio-details">
+        <div class="overlay-content">
+            <ul class="ul-details fade-in">
+                <li>What did we make?: <div><br></div>
+                    Pawkeeper is a comprehensive MERN stack (MongoDB, Express.js, React.js, Node.js) application designed to connect pet owners with pet sitters through an interactive map interface. The platform integrates Socket.io for real-time chat functionality and Mapbox for location-based services.
+                    <br><br>
+                    Pet owners can easily search for available sitters in their area using the interactive map, whilst pet sitters can create their profile and place a pin on the map to showcase their services and availability. The application features a robust chat system allowing direct communication between owners and sitters to discuss requirements, rates, and arrangements.
+                    <br><br>
+                    The platform was built with a clear separation of concerns, with a dedicated frontend deployed on Netlify and a backend API handling data management, authentication, and real-time communications.
+                </li>
+                <br>
+                <li>Why did we make this?: <div><br></div>
+                    The Pawkeeper project was born from recognising the need for a more efficient way to connect pet owners with reliable pet sitters. Traditional methods of finding pet care often involve word of mouth, notice boards, or general-purpose service platforms that don't address the specific needs of pet care.
+                    <br><br>
+                    We wanted to create a specialised solution that would make it easy for pet owners to find suitable sitters based on location, whilst giving pet sitters a platform to promote their services and manage their client relationships. The map-based approach provides an intuitive visual way to browse available sitters, whilst the integrated chat system streamlines the communication process.
+                    <br><br>
+                    Building this application allowed me to deepen my skills in the MERN stack while also gaining experience with real-time communication technologies (Socket.io) and geolocation services (Mapbox). It was an excellent opportunity to create a full-stack application with practical utility and a polished user experience.
+                </li>
+                <li>
+                    <a href="https://github.com/rephlax/PawKeeper-LHK-FE" target="_blank">Frontend Github</a> | 
+                    <a href="https://github.com/rephlax/PawKeeper-LHK-BE" target="_blank">Backend Github</a>
+                </li>
+            </ul>
+        </div>
+    </div>
     <div id="details-4" class="portfolio-details">
         <div class="overlay-content">
             <ul class="ul-details fade-in">
