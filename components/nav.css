@@ -1,8 +1,8 @@
 .nav {
 	padding-block: 20px;
 	padding-inline: 20px;
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
 	align-items: center;
 	position: fixed;
 	top: 0;
@@ -13,6 +13,10 @@
 	backdrop-filter: blur(10px);
 	transition: background 0.3s ease, padding 0.3s ease;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav > img {
+	justify-self: start;
 }
 
 html.light-theme .nav {
@@ -34,6 +38,8 @@ html.light-theme .nav.scrolled {
 	display: flex;
 	gap: 24px;
 	align-items: center;
+	justify-content: center;
+	grid-column: 2;
 }
 
 .nav a {
@@ -79,9 +85,45 @@ html.light-theme .nav.scrolled {
 	border: none;
 	cursor: pointer;
 	padding: 8px;
+	justify-self: end;
+	grid-column: 3;
+}
+
+.nav-toggle svg path {
+	stroke: var(--light-icon);
+	transition: stroke 0.3s ease;
+}
+
+html.light-theme .nav-toggle svg path {
+	stroke: var(--black);
+}
+
+.nav-toggle:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+html.light-theme .nav-toggle:hover {
+	background: rgba(0, 0, 0, 0.05);
+}
+
+html.light-theme .nav-links {
+	background: var(--beige);
+	box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+html.light-theme .nav-links .btn--nav {
+	color: var(--black);
 }
 
 @media (max-width: 768px) {
+	.nav {
+		grid-template-columns: auto 1fr auto;
+	}
+
+	.nav-links {
+		grid-column: 1 / span 3;
+	}
+
 	.nav-toggle {
 		display: block;
 	}
@@ -89,36 +131,44 @@ html.light-theme .nav.scrolled {
 	.nav-links {
 		position: fixed;
 		top: 60px;
-		right: 0;
+		right: -300px; /* Start completely off-screen */
 		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
 		background: var(--dark-blue);
 		width: 100%;
 		max-width: 300px;
 		height: calc(100vh - 60px);
 		padding: 24px;
-		transform: translateX(100%);
-		transition: transform 0.3s ease;
+		transition: right 0.3s ease; /* Change to right instead of transform */
 		box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
 		z-index: 99;
+		text-align: center;
+		visibility: hidden; /* Hide when closed */
 	}
 
 	.nav-links.open {
-		transform: translateX(0);
+		right: 0; /* Move to visible position */
+		visibility: visible; /* Show when open */
 	}
 
 	.nav-links li {
 		margin-bottom: 16px;
 		width: 100%;
+		display: flex;
+		justify-content: center;
 	}
 
 	.nav-links .btn--nav {
-		display: block;
-		width: 100%;
+		display: inline-block;
+		width: auto;
 		padding: 12px;
+		text-align: center;
 	}
 
 	.nav-hire-me .btn--raised {
-		width: 100%;
+		width: auto;
 		text-align: center;
+		margin: 0 auto;
 	}
 }
