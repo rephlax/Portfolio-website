@@ -1,32 +1,59 @@
 .hire-form {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: var(--gap);
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: var(--gap);
+	max-width: 100%;
 }
 
 .hire-action {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 }
 
 .hire-line {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 50px;
+	display: flex;
+	gap: 20px;
+	margin-bottom: 50px;
 }
 
 .hire-line p {
-    margin-top: 0;
-    margin-bottom: 5px;
+	margin-top: 0;
+	margin-bottom: 5px;
 }
 
 .netlify-captcha {
-    padding: 10px;
+	padding: 10px;
 }
 
 @media (max-width: 37.5rem) {
-    .hire-form {
-        grid-template-columns: 1fr;
-    }
+	.hire-form {
+		grid-template-columns: 1fr;
+		gap: 30px;
+		padding: 0 10px;
+	}
+
+	.hire-form form {
+		width: 100%;
+	}
+
+	.input {
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	textarea.input {
+		width: 100%;
+	}
+
+	.hire-action {
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	.hire-line {
+		align-items: flex-start;
+		margin-bottom: 30px;
+	}
 }
