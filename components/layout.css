@@ -192,6 +192,10 @@
 	margin-top: 40px;
 }
 
+#section2 {
+	margin-bottom: 240px;
+}
+
 @media (max-width: 768px) {
 	.testimonials-grid {
 		grid-template-columns: 1fr;
