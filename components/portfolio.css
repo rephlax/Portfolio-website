@@ -101,6 +101,7 @@
 
 .ul-details li {
 	margin-bottom: 20px;
+	list-style: none;
 }
 
 .overlay {
