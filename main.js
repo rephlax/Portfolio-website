@@ -279,15 +279,4 @@ document.addEventListener("DOMContentLoaded", () => {
 			oldGrid.parentNode.replaceChild(testimonialsGrid, oldGrid);
 		}
 	}
-
-	const skillTags = document.querySelectorAll(".tag");
-	skillTags.forEach((tag) => {
-		const tooltip = tag.querySelector(".tag-text");
-		if (tooltip) {
-			const label = document.createElement("span");
-			label.className = "tag-label";
-			label.textContent = tooltip.textContent;
-			tag.appendChild(label);
-		}
-	});
 });
