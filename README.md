@@ -10,7 +10,6 @@ Features
 - **Modern Technologies**: The site is built using modern web technologies, including HTML5, CSS3 and JavaScript. It features a sleek and modern design to highlight the projects effectively.
 - **Project Showcase**: A dedicated section to showcase my completed projects with detailed descriptions, technologies used, and links to the live demos and source code.
 - **About Me**: An introduction to who I am, my background, and my journey into web development.
-- **Contact**: A contact form and links to my social media profiles for easy communication.
 
 Installation and Setup
 
