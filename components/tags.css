@@ -122,6 +122,12 @@
 		font-size: 0.7rem;
 		padding: 4px 8px;
 	}
+
+	.tag .tag-text {
+		visibility: visible;
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
 }
 
 @media (max-width: 480px) {
