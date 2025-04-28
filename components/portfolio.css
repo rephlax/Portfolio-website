@@ -75,6 +75,7 @@
 	z-index: 1001;
 	color: var(--details-text-color);
 	max-width: 650px;
+	width: 60vw;
 	max-height: 85vh;
 	overflow-y: auto;
 	border-radius: var(--card-border-radius);
@@ -179,6 +180,7 @@
 	.portfolio-details {
 		max-width: calc(100% - 32px);
 		padding: 20px;
+		width: 80vw;
 	}
 }
 
