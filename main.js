@@ -1,9 +1,44 @@
+import Lenis from "https://cdn.jsdelivr.net/npm/lenis@1/+esm";
+
 document.addEventListener("DOMContentLoaded", () => {
+	// Smooth scroll. Lenis wraps the native scroll, so anchor links, the
+	// `.scrolled` nav toggle and accessibility all keep working. Skipped
+	// entirely when the user asks for reduced motion.
+	const prefersReducedMotion = window.matchMedia(
+		"(prefers-reduced-motion: reduce)",
+	).matches;
+
+	let lenis = null;
+	if (!prefersReducedMotion) {
+		lenis = new Lenis({ autoRaf: true, duration: 1.1 });
+	}
+
+	// One scroll path for both the anchor links and the floating button.
+	function scrollToTarget(target, offset = 0) {
+		if (lenis) {
+			lenis.scrollTo(target, { offset });
+		} else if (typeof target === "number") {
+			window.scrollTo({ top: target, behavior: "smooth" });
+		} else {
+			window.scrollTo({ top: target.offsetTop + offset, behavior: "smooth" });
+		}
+	}
+
 	const fadeElements = document.querySelectorAll(".fade-in");
 	const observer = new IntersectionObserver(
 		(entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
+					// Stagger each item against its neighbours in the same section
+					// so a block cascades in rather than snapping all at once.
+					const section = entry.target.closest(".layout-section");
+					const groupItems = section
+						? Array.from(section.querySelectorAll(".fade-in"))
+						: [];
+					const indexInGroup = groupItems.indexOf(entry.target);
+					const delay = Math.min(indexInGroup, 6) * 80;
+					entry.target.style.transitionDelay = `${delay}ms`;
+
 					entry.target.classList.add("visible");
 					observer.unobserve(entry.target);
 				}
@@ -12,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		{
 			threshold: 0.1,
 			rootMargin: "0px 0px -100px 0px",
-		}
+		},
 	);
 
 	fadeElements.forEach((element) => {
@@ -48,14 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			const targetElement = document.querySelector(targetId);
 
 			if (targetElement) {
-				// Calculate offset accounting for fixed header
 				const headerHeight = document.querySelector(".nav")?.offsetHeight || 80;
-				const scrollToPosition = targetElement.offsetTop - headerHeight;
-
-				window.scrollTo({
-					top: scrollToPosition,
-					behavior: "smooth",
-				});
+				scrollToTarget(targetElement, -headerHeight);
 
 				// Close mobile menu if open
 				const navLinks = document.querySelector(".nav-links");
@@ -75,10 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		// Check if we're near the bottom of the page
 		if (scrollPosition + windowHeight >= scrollHeight - 200) {
 			// Scroll to top if near the bottom
-			window.scrollTo({
-				top: 0,
-				behavior: "smooth",
-			});
+			scrollToTarget(0);
 			// Reset target to first section
 			navButton.setAttribute("data-target", "#section2");
 			return;
@@ -89,14 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		const targetElement = document.querySelector(targetId);
 
 		if (targetElement) {
-			// Calculate the scroll position accounting for fixed header
 			const headerHeight = document.querySelector(".nav")?.offsetHeight || 80;
-			const scrollToPosition = targetElement.offsetTop - headerHeight;
-
-			window.scrollTo({
-				top: scrollToPosition,
-				behavior: "smooth",
-			});
+			scrollToTarget(targetElement, -headerHeight);
 
 			// Update the button's target to the next section
 			const currentSectionNum = parseInt(targetId.replace("#section", ""));
@@ -200,83 +220,4 @@ document.addEventListener("DOMContentLoaded", () => {
 	navToggle.addEventListener("click", () => {
 		navLinks.classList.toggle("open");
 	});
-
-	// Update portfolio layout structure
-	const portfolioItems = document.querySelectorAll(".portfolio");
-	const portfolioSection = document.querySelector("#section3 .container");
-
-	if (portfolioSection && portfolioItems.length > 0) {
-		const portfolioGrid = document.createElement("div");
-		portfolioGrid.className = "portfolio";
-
-		portfolioItems.forEach((item) => {
-			// Create new card structure
-			const card = document.createElement("div");
-			card.className = "portfolio-item fade-in";
-
-			// Get existing elements
-			const img = item.querySelector(".portfolio-screenshot");
-			const title = item.querySelector(".title");
-			const description = item.querySelector(".text");
-			const visitBtn = item.querySelector(".btn--line");
-			const expandBtn = item.querySelector(".btn--expand");
-
-			// Create content container
-			const content = document.createElement("div");
-			content.className = "portfolio-content";
-
-			// Create actions container
-			const actions = document.createElement("div");
-			actions.className = "portfolio-actions";
-
-			// Append buttons to actions
-			if (visitBtn) actions.appendChild(visitBtn.cloneNode(true));
-			if (expandBtn) actions.appendChild(expandBtn.cloneNode(true));
-
-			// Build the new structure
-			if (title) content.appendChild(title.cloneNode(true));
-			if (description) content.appendChild(description.cloneNode(true));
-			content.appendChild(actions);
-
-			if (img) card.appendChild(img.cloneNode(true));
-			card.appendChild(content);
-
-			portfolioGrid.appendChild(card);
-		});
-
-		// Replace old content with new grid
-		while (portfolioSection.firstChild) {
-			if (portfolioSection.firstChild.id === "heading-portfolio") {
-				portfolioSection.removeChild(portfolioSection.firstChild.nextSibling);
-				break;
-			}
-			portfolioSection.removeChild(portfolioSection.firstChild);
-		}
-
-		portfolioSection.appendChild(portfolioGrid);
-	}
-
-	// Update testimonials layout
-	const testimonials = document.querySelectorAll(
-		"#section5 .layout-grid-half figure"
-	);
-	const testimonialsSection = document.querySelector("#section5 .container");
-
-	if (testimonialsSection && testimonials.length > 0) {
-		const testimonialsGrid = document.createElement("div");
-		testimonialsGrid.className = "testimonials-grid";
-
-		testimonials.forEach((item) => {
-			const card = document.createElement("div");
-			card.className = "testimonial-card fade-in";
-
-			card.appendChild(item.cloneNode(true));
-			testimonialsGrid.appendChild(card);
-		});
-
-		const oldGrid = document.querySelector("#section5 .layout-grid-half");
-		if (oldGrid) {
-			oldGrid.parentNode.replaceChild(testimonialsGrid, oldGrid);
-		}
-	}
 });
