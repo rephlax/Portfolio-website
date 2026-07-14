@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+    name="description"
+    content="Luke Farrell is a luxury hotel concierge transitioning into lifestyle management, membership concierge and private client services.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.css" />
@@ -36,9 +39,9 @@
               
             <ul class="nav-links">
                 <li><a href="#section2" class="btn btn--nav">About me</a></li>
-                <li><a href="#section3" class="btn btn--nav">Portfolio</a></li>
                 <li><a href="#section4" class="btn btn--nav">Experience</a></li>
-                <li><a href="#section5" class="btn btn--nav">Testimonials</a></li>
+                <li><a href="#section5" class="btn btn--nav">How I work</a></li>
+                <li><a href="#section3" class="btn btn--nav">Personal projects</a></li>
             </ul>
         </div>
     </div>
@@ -72,50 +75,73 @@
     <section id="section1" class="layout-section" aria-describedby="intro-h1 intro-h2">
         <div class="container">
             <h1 id="intro-h1" class="title--lg fade-in">Luke Farrell</h1>
-            <h2 id="intro-h2" class="title--lg fade-in">Concierge</h2>
-            <p class="text--xl fade-in">I work in luxury hospitality and I'm moving into lifestyle management.</p>
-            <p class="text--xl fade-in">Building websites is a hobby of mine, here's some of what I've made.</p>
+            <h2 id="intro-h2" class="title--lg fade-in">Luxury Concierge</h2>
+            <p class="text--xl fade-in">Over four years working in luxury hospitality, now looking to move into lifestyle management and private client services.</p>
+            <p class="text--xl fade-in">Personalised service, trusted relationships and level-headed solutions when plans change.</p>
         </div>
     </section>
-    <section id="section2" class="layout-section" aria-labelledby="heading-aboutme">
+    <section
+        id="section2"
+        class="layout-section"
+        aria-labelledby="heading-aboutme"
+    >
         <div class="container">
-            <h2 id="heading-aboutme" class="title--sm layout-section-title fade-in">About me</h2>
+            <h2
+                id="heading-aboutme"
+                class="title--sm layout-section-title fade-in"
+            >
+                About me
+            </h2>
+
             <div class="layout-grid-half">
                 <div>
                     <p class="text--lg fade-in">
-                        Hello! I'm Luke Farrell. I work in luxury hospitality and I'm moving into lifestyle management, building on years of anticipating what clients need and making things happen for them. Building websites is a hobby of mine, something I do in my spare time when I want to make something and get a bit technical.
+                        Hello, I'm Luke Farrell. I currently work as a Concierge at Mallory Court Hotel and Spa in Leamington Spa, having progressed from Receptionist after joining the hotel in 2021.
                     </p>
-                    
-                    <button class="btn btn--expand fade-in" onclick="toggleDetails('about-details')">Read My Full Story</button>
+
+                    <p class="text--lg fade-in">
+                        My role involves understanding what each guest is looking for, arranging restaurants and experiences, recording preferences and finding sensible solutions when requests come in at the last minute.
+                    </p>
+
+                    <button
+                        class="btn btn--expand fade-in"
+                        onclick="toggleDetails('about-details')"
+                    >
+                        Read My Full Story
+                    </button>
                 </div>
+
                 <div>
                     <p class="text--lg fade-in">
-                        Have a look at the projects below to see what I get up to in my spare time, or get in touch for a chat.
+                        I am now looking to move into lifestyle management, membership concierge or private client services, where I can build longer-term relationships and take ownership of requests from the first conversation through to the final detail.
                     </p>
-                    
+
                     <p class="text--lg fade-in">
-                        Curious to know more? Check out my
-                        <a href="#section3">portfolio</a>
+                        I am based in Warwickshire and open to opportunities in Birmingham, London, hybrid positions and relocation for the right role.
                     </p>
                 </div>
             </div>
         </div>
-        
+
         <div id="about-details" class="portfolio-details">
             <div class="overlay-content">
                 <h3>My Journey</h3>
+
                 <ul class="ul-details fade-in">
                     <li>
-                        While working as a concierge at Mallory Court Hotel, I rediscovered my childhood fascination with how websites work during a family holiday in 2023. That spark ignited a passion that couldn't be contained.
+                        I joined Mallory Court Hotel and Spa as a Receptionist in 2021 and later progressed into the Concierge role, giving me experience across the full guest journey.
                     </li>
+
                     <li>
-                        Since then I've spent evenings after hotel shifts learning to code for the fun of it, building small projects and seeing ideas through. I enjoyed it enough to do Ironhack's web development bootcamp, which turned a casual interest into a proper hobby.
+                        I regularly arrange dining, activities and local experiences, adapting recommendations around the individual rather than offering every guest the same list.
                     </li>
+
                     <li>
-                        Most of my projects use the MERN stack (MongoDB, Express.js, React, Node.js), and lately I've been tinkering with TypeScript and Next.js. It's something I keep coming back to whenever I want to build something of my own.
+                        The part of the role I value most is building trust. Some returning guests now ask for me personally, which has shown me how much consistency, listening and attention to detail matter.
                     </li>
+
                     <li>
-                        Hospitality taught me to read what people actually need and stay calm when things go sideways, and those are the same instincts I'm taking into lifestyle management. The coding keeps the technical, problem-solving side of my brain happy.
+                        Outside work, I build websites as a hobby. It keeps the technical and problem-solving side of my brain active and has helped me become comfortable learning new systems and organising information.
                     </li>
                 </ul>
             </div>
@@ -123,7 +149,8 @@
     </section>
     <section id="section3" class="layout-section" aria-labelledby="heading-portfolio">
         <div class="container">
-            <h2 id="heading-portfolio" class="title--sm layout-section-title fade-in">Portfolio</h2>
+            <h2 id="heading-portfolio" class="title--sm layout-section-title fade-in">Personal Projects</h2>
+            <p class="text--lg fade-in">Website development is a hobby of mine. These projects show the technical, organised and problem-solving side I bring alongside my hospitality experience.</p>
             <div class="portfolio">
                 <!-- Pawkeeper Card -->
                 <div class="portfolio-item fade-in">
@@ -499,27 +526,48 @@
             </ul>
         </div>
     </section>
-    <section id="section5" class="layout-section" aria-labelledby="heading-testimonials">
+    <section
+        id="section5"
+        class="layout-section"
+        aria-labelledby="heading-approach">
         <div class="container">
-            <h2 id="heading-testimonials" class="title--sm layout-section-title fade-in">
-                Testimonials
+            <h2
+                id="heading-approach"
+                class="title--sm layout-section-title fade-in"
+            >
+                How I work
             </h2>
+
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
-                    <blockquote cite="https://www.tripadvisor.com/Hotel_Review-g187063-d192835-Reviews-Mallory_Court_Hotel-Leamington_Spa_Warwickshire_England.html">
-                        <p class="text--lg">
-                            I had the privilege of teaching Luke during his time at Ironhacks Web Development bootcamp, where he consistently demonstrated exceptional technical ability, strong analytical thinking, and an impressive commitment to professional growth. Luke excelled in both individual assignments and collaborative projects, showing a deep understanding of web development principles and an eagerness to continuously improve. His attention to detail, problem-solving skills, and positive attitude set them apart as a standout student in the course. I am confident that Luke will bring significant value to any organization they join and look forward to seeing their future achievements in the tech industry. I would strongly recommend him for any position that he is considering, any team would be lucky to have him</p>
-                    </blockquote>
-                    <figcaption>Joshua - Lead Teacher - IronHack Bootcamp</figcaption>
+                    <h3 class="title">
+                        Understand the person
+                    </h3>
+
+                    <p class="text--lg">
+                        I ask the right questions, listen properly and build a clear picture of what someone actually wants before making a recommendation.
+                    </p>
                 </div>
+
                 <div class="testimonial-card fade-in">
-                    <blockquote cite="https://www.tripadvisor.com/Hotel_Review-g187063-d192835-Reviews-Mallory_Court_Hotel-Leamington_Spa_Warwickshire_England.html">
-                        <p class="text--lg">
-                            I've had the pleasure to work with Luke during Ironhack's Full Stack Web Development Bootcamp. With that collaboration I was able to see that Luke is a passionate developer with a learner mindset. He is able to produce quality code on the fly and learn new technologies or methods with astounding ease and speed. Styling wise he is very talented and produces clean and modern styles with various styling tools (Tailwind/Sass). It was an honor to work with him and I can say I am still honored to keep in touch.                        </p>
-                    </blockquote>
-                    <figcaption>Hernani Silva - IronHack Bootcamp</figcaption>
+                    <h3 class="title">
+                        Own the request
+                    </h3>
+
+                    <p class="text--lg">
+                        I keep track of the details, provide updates and stay involved until the request has been completed rather than simply passing it on.
+                    </p>
                 </div>
-                
+
+                <div class="testimonial-card fade-in">
+                    <h3 class="title">
+                        Stay level-headed
+                    </h3>
+
+                    <p class="text--lg">
+                        Last-minute changes are part of hospitality. I stay calm, work through the available options and focus on giving the guest a clear solution.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -555,16 +603,18 @@
         </div>
 </footer>
 <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Person",
-      "email": "lukefarrell2012@gmail.com",
-      "jobTitle": "Concierge",
-      "name": "Luke Farrell",
-      "gender": "male",
-      "url": "lukefarrell.netlify.app",
-      "description": "I'm Luke Farrell, a hospitality professional moving into lifestyle management, and I build websites as a hobby.",
-    }
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Luke Farrell",
+    "jobTitle": "Luxury Hotel Concierge",
+    "url": "https://lukefarrell.netlify.app/",
+    "description": "Luke Farrell is a luxury hotel concierge transitioning into lifestyle management, membership concierge and private client services.",
+    "sameAs": [
+        "https://www.linkedin.com/in/luke-farrell-89aab31a0/",
+        "https://github.com/rephlax"
+    ]
+}
 </script>
 </body>
 </html>
